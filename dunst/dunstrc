@@ -1,0 +1,61 @@
+[global]
+    monitor = 0
+    follow = mouse
+    geometry = "300x100-10+35"
+    indicate_hidden = no
+    shrink = no
+    transparency = 30
+    notification_height = 0
+    separator_height = 4
+    padding = 12
+    horizontal_padding = 12
+    frame_width = 2
+    frame_color = "#33ffe1"
+    separator_color = auto
+    sort = no
+    idle_threshold = 0
+
+    ### Text ###
+
+    font = Cozette Vector 12
+    line_height = 3
+    markup = full
+    format = "%s\n%b"
+    alignment = left
+    show_age_threshold = -1
+    word_wrap = no
+    ellipsize = middle
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = true
+    show_indicators = no
+
+    # Maximum amount of notifications kept in history
+    history_length = 1
+    title = Dunst
+    class = Dunst
+    startup_notification = false
+
+[urgency_low]
+    msg_urgency = low
+    background = "#2e3440"
+    foreground = "#ffffff"
+	timeout = 3
+
+[urgency_normal]
+    msg_urgency = normal
+    background = "#2e3440"
+    foreground = "#ffffff"
+	timeout = 4
+
+[urgency_critical]
+    msg_urgency = critical
+    background = "#ff0000"
+    foreground = "#ECEFF4"
+	timeout = 5
+
+
+
+
+mouse_left_click = close_all
+mouse_right_click = do_action
