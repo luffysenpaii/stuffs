@@ -1,0 +1,204 @@
+#APPS
+
+super + Return
+  kitty
+
+super + shift + Return
+  alacritty
+
+super +shift+ a
+	alacritty -e gotop
+
+super + shift + n
+  ./.config/polybar/launch.sh
+super + e
+  thunar
+  
+alt + F1
+    rofi -show drun -show-icons
+
+ctrl+ shift 
+
+super + r 
+  kitty ranger
+super + m
+	megasync
+
+super + shift + y
+	youtube-music 
+super + shift + m
+	pkill megasync
+
+super + t
+	telegram-desktop
+
+super + shift + t 
+  gnome-terminal
+
+shift + Print
+	flameshot gui
+
+ctrl + Print 
+	flameshot full --path ~/Pictures/screenshot
+ctrl + shift + Print
+        flameshot launcher
+super + w
+    firefox
+
+super + shift + w 
+	brave
+
+super + t
+    gnome-terminal
+
+ctrl + alt + p
+    pamac-manager
+
+ctrl + alt + m
+     gnome-control-center
+
+
+# Show clipmenu
+super + v
+	rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+
+
+
+
+
+
+#MULTIMEDIA KEYS
+
+XF86AudioRaiseVolume
+	pactl -- set-sink-volume 0 +5% 
+
+XF86AudioLowerVolume 	   
+	pactl -- set-sink-volume 0 -5% 
+
+XF86AudioMute
+	pactl set-sink-mute 0 toggle
+
+XF86AudioPlay
+    playerctl play-pause
+
+XF86AudioNext
+    playerctl next
+
+XF86AudioPrev
+    playerctl previous
+
+XF86AudioStop
+    playerctl stop
+
+XF86MonBrightnessUp
+    blight -d amdgpu_bl0 set +25
+XF86Calculator
+    blight -d amdgpu_bl0 set +25
+
+XF86MonBrightnessDown
+    blight -d amdgpu_bl0 set -25
+XF86Tools
+    blight -d amdgpu_bl0 set -25
+
+
+
+#MPC_BIND
+ctrl + Home
+  mpc prev
+  
+ctrl + End 
+  mpc next
+Home    
+  mpc toggle
+
+#MISC
+
+super + y
+    polybar-msg cmd toggle
+
+
+#Picom Toggle
+ctrl + alt + o
+    ~/.config/bspwm/scripts/picom-toggle.sh
+
+
+###POWER
+super + alt + l 
+	pkill bspwm
+
+super + shift + x
+	shutdown now
+
+super + ctrl + x
+	reboot
+
+super + l
+  	betterlockscreen --off 5 -l --time-format %I:%M-%P
+         
+super + alt + x
+  systemctl suspend
+#BSPC
+
+super + shift + s
+	pkill -USR1 -x sxhkd
+
+super + shift + Escape
+	xkill
+
+#Toggle fullscreen of window
+super + f
+	bspc node --state \~fullscreen
+
+super + q
+	bspc node -c
+
+#super + Tab
+#	bspc desktop -f '^{1-9,10}'
+
+super + space
+	bspc node -t {tiled,floating,fullscreen}
+
+#Reload bspwm
+super + shift + b
+	~/.config/bspwm/bspwmrc
+
+# Focus/swap windows by direction
+super + {_,shift + }{Left,Down,Up,Right}
+	bspc node --{focus,swap} {west,south,north,east}
+
+
+# Contract tiled space
+super + ctrl + {Left,Down,Up,Right}
+	bspc node {@east -r -10,@north -r +10,@south -r -10,@west -r +10}
+
+# Expand tiled space
+alt + ctrl + {Left,Down,Up,Right}
+	bspc node {@west -r -10,@south -r +10,@north -r -10,@east -r +10}
+
+
+super + Left
+	bspc node --focus west
+
+super + Right
+	bspc node --focus east
+
+super + Up
+	bspc node --focus north
+
+super + Down
+	bspc node --focus south
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}' --follow
+
+
+# focus the last node/desktop
+super + {grave,Tab}
+	bspc {node,desktop} -f last
+ 
+
+ # Mode for dynamic gaps.
+super + bracket{left,right}
+	bspc config -d focused window_gap "$(($(bspc config -d focused window_gap) {-,+} 5 ))"
+
