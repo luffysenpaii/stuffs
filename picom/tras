@@ -1,0 +1,63 @@
+corner-radius = 15;
+rounded-corners-exclude = [    
+    "class_g = 'XTerm'",  
+    "class_g = 'Polybar'",  
+    "class_g = 'code-oss'",  
+    "class_g = 'firefox'",  
+    "class_g = 'Tint2'",  
+  ];  
+
+#------------- Transparency ----------------------------  
+
+  inactive-opacity = 0.75;  
+  active-opacity = 0.75;  
+  frame-opacity = 1;  
+  inactive-opacity-override = True;  
+  opacity-rule = [  
+    "100:class_g = 'Microsoft Teams - Preview'",  
+    "100:class_g = 'mpv'",  
+    "100:class_g = 'Polybar'",
+    "100:class_g = 'TelegramDesktop'",
+    "100:class_g = 'jetbrains-studio'",
+    "100:class_g = 'code-oss'",  
+    "100:class_g = 'Chromium'"];  
+
+#----------------- Fade Effects ----------------------------
+
+  fading = true;  
+  fade-delta = 1;  
+  fade-in-step = 0.05;  
+  fade-out-step = 0.05;  
+  fade-exclude = [ ];  
+
+  #----------------- Win Type --------------------------------  
+
+  wintypes :  
+  {  
+      popup_menu =  
+      {  
+        opacity = 1.0;  
+        fade = false;  
+      };  
+      dropdown_menu =  
+      {  
+        opacity = 1.0;  
+        fade = false;  
+      };  
+      dnd =  
+      {  
+        shadow = false;  
+        fade = false;  
+      };  
+      dock =  
+      {  
+          shadow = false;  
+      };  
+      tooltip =  
+      {  
+          fade = false;  
+          shadow = true;  
+          opacity = 1.0;  
+          focus = true;  
+      };  
+  };  
